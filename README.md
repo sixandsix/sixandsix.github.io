@@ -1,2 +1,2 @@
 # sixandsix.github.io
-个人博客
+个人闹着玩儿
