@@ -156,31 +156,7 @@ function norightclick(e)
 document.oncontextmenu = nocontextmenu;  // for IE5+
 document.onmousedown = norightclick;  // for all others
 	
-<body id = "app">
-	<audio id="audio" src="http://music.163.com/song/media/outer/url?id=1812230727.mp3" style="opacity:0" preload="auto" controls hidden="true"/>  
-	<script>
-		var myAuto = document.getElementById('audio');  
 
-        var app = document.getElementById("app");
-        // 监听事件
-        app.addEventListener("mousemove", function(){
-        	console.log("played");
-        	myAuto.play();
-        }, true);
-
-        // 用定时器触发事件
-		setInterval(function(){
-			if ("createEvent" in document) {
-			 var evt = document.createEvent("HTMLEvents");
-			 evt.initEvent("mousemove", false, true);
-			 app.dispatchEvent(evt);
-			}
-			else
-			 app.fireEvent("onmousemove");
-		}, 1000);
-
-	</script>
-</body>
 //-->
 </SCRIPT>
 <span style="display:none">
