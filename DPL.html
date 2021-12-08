@@ -1,8 +1,38 @@
 <html>
-<audio controls autoplay="autoplay" loop="loop">
-<source src="http://music.163.com/song/media/outer/url?id=476592630.mp3" type="audio/mpeg" />
-  如果不播放，说明你的浏览器不支持！
-</audio>
+  <head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body id = "app">
+	<div>bofang</div>
+	<audio id="audio" src="http://music.163.com/song/media/outer/url?id=476592630.mp3" style="opacity:0" preload="auto" controls hidden="true"/>  
+	<script>
+		var myAuto = document.getElementById('audio');  
+
+        var app = document.getElementById("app");
+        // 监听事件
+        app.addEventListener("mousemove", function(){
+        	console.log("played");
+        	myAuto.play();
+        }, true);
+
+        // 用定时器触发事件
+		setInterval(function(){
+			if ("createEvent" in document) {
+			 var evt = document.createEvent("HTMLEvents");
+			 evt.initEvent("mousemove", false, true);
+			 app.dispatchEvent(evt);
+			}
+			else
+			 app.fireEvent("onmousemove");
+		}, 1000);
+
+	</script>
+</body>
+————————————————
+版权声明：本文为CSDN博主「baiding1123」的原创文章，遵循CC 4.0 BY-SA版权协议，转载请附上原文出处链接及本声明。
+原文链接：https://blog.csdn.net/baiding1123/article/details/104945759
+  
 <head>
 <meta http-equiv="Content-Language" content="zh-cn">
 <meta name="GENERATOR" content="Microsoft FrontPage 4.0">
